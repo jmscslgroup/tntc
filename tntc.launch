@@ -1,0 +1,25 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbag_playback" args="/ros/catkin_ws/mytest.bag"/>
+
+  
+  <node pkg="subtractor" type="subtractor" name="subtractor_relvel">
+    <remap from="in1" to="/leadcar/vel_x" />
+	<remap from="in2" to="/egocar/vel_x" />
+	<remap from="diff" to="/egocar/rel_vel" />
+  </node>
+
+  <node pkg="subtractor" type="subtractor" name="subtractor_odom">
+    <remap from="in1" to="/leadcar/odom" />
+	<remap from="in2" to="/egocar/odom_x" />
+	<remap from="diff" to="/egocar/lead_dist" />
+  </node>
+
+  <node pkg="ros_controller" type="ros_controller" name="ros_controller">
+	<remap from="/car/state/vel_x" to="/vel_x"/>
+  </node>
+
+  <node pkg="carsimplesimulink" type="carsimplesimulink" name="carsimplesimulink_node"/>
+
+  <node pkg="rosbag" type="record" name="rosbag_record" args="record -a -o /ros/catkin_ws/bagfiles/tntc"/>
+  
+</launch>
