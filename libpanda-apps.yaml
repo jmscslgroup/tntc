@@ -18,3 +18,5 @@ apps:
           repo: setpointreader
         - owner: jmscslgroup
           repo: tntc
+	- owner: jmscslgroup
+	  repo: adder
