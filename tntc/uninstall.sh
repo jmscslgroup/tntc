@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "=========================="
-echo "Removing App tntc_controller"
+echo "Removing App tntc"
 
 
 LIBPANDA_USER=$(cat /etc/libpanda.d/libpanda_usr)

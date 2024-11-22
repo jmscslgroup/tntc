@@ -1,5 +1,5 @@
 apps:
-  - name: tntc_controller
+  - name: tntc
     properties:
       - owns_panda: true
     dependencies:
@@ -16,5 +16,5 @@ apps:
           repo: velocity_controller
         - owner: jmscslgroup
           repo: setpointreader
-        - owner: ianmiller314
-          repo: tntc_controller
+        - owner: jmscslgroup
+          repo: tntc
