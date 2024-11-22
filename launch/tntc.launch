@@ -25,7 +25,7 @@
 
   <!-- By putting this car into a namespace, we keep the variables clean -->
   <group ns="egocar">
-	  <node pkg="ros_controller" type="ros_controller" name="ros_controller">
+	  <node pkg="tntc" type="tntc" name="tntc">
 		<remap from="/car/state/vel_x" to="/vel_x"/>
 		<remap from="/lead_dist" to="/egocar/lead_dist"/>
 		<remap from="/cmd_accel" to="/egocar/cmd_accel"/>
